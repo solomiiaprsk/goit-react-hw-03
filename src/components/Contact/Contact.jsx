@@ -3,7 +3,7 @@ import clsx from "clsx";
 import { FaUser } from "react-icons/fa";
 import { FaPhone } from "react-icons/fa";
 
-const Contact = ({contacts: {name, number}}) => {
+const Contact = ({ contacts: { id, name, number }, onDelete }) => {
     return (
         <div className={css.container}>
             <div className={css.Contact}>
@@ -16,7 +16,7 @@ const Contact = ({contacts: {name, number}}) => {
                     <p>{number}</p>
                  </span>
             </div>
-            <button className={css.btn}>Delete</button>
+            <button className={css.btn} onClick={() => onDelete(id)}>Delete</button>
         </div>
     )
 }
